@@ -1,0 +1,76 @@
+import random
+
+# List of 50 questions
+questions = [
+    {"question": "What is the Base ecosystem designed for?", "options": ["A blockchain network", "A programming language", "A data storage solution", "An operating system"], "answer": "A"},
+    {"question": "What programming language is commonly used for building dApps on Base?", "options": ["Python", "Solidity", "C++", "Ruby"], "answer": "B"},
+    {"question": "Which company developed the Base ecosystem?", "options": ["Google", "Coinbase", "Meta", "Apple"], "answer": "B"},
+    {"question": "What is the primary purpose of Base?", "options": ["DeFi applications", "Gaming", "Machine learning", "Email services"], "answer": "A"},
+    {"question": "Base operates on which blockchain technology?", "options": ["Bitcoin", "Ethereum", "Polkadot", "Solana"], "answer": "B"},
+    {"question": "What is the native cryptocurrency of Base?", "options": ["BTC", "ETH", "SOL", "BNB"], "answer": "B"},
+    {"question": "What is a key feature of the Base ecosystem?", "options": ["Low fees", "High latency", "Centralized structure", "Limited interoperability"], "answer": "A"},
+    {"question": "Which layer does Base belong to in the blockchain architecture?", "options": ["Layer 0", "Layer 1", "Layer 2", "Layer 3"], "answer": "C"},
+    {"question": "What is a dApp?", "options": ["Desktop Application", "Decentralized Application", "Data Application", "Distributed Application"], "answer": "B"},
+    {"question": "What tool is used to interact with Base?", "options": ["Metamask", "Google Drive", "VS Code", "Terminal"], "answer": "A"},
+    {"question": "Which consensus mechanism is used by Ethereum, on which Base runs?", "options": ["Proof of Work", "Proof of Stake", "Delegated Proof of Stake", "Proof of Authority"], "answer": "B"},
+    {"question": "Base was created to address what main issue in blockchain?", "options": ["Scalability", "Storage", "UI Design", "Power Consumption"], "answer": "A"},
+    {"question": "What is a smart contract?", "options": ["A paper contract", "A contract enforced by blockchain", "A legal agreement", "A service agreement"], "answer": "B"},
+    {"question": "Which blockchain explorer is used to monitor transactions on Base?", "options": ["Etherscan", "Polkascan", "Bscan", "Solscan"], "answer": "A"},
+    {"question": "Which layer is Ethereum?", "options": ["Layer 0", "Layer 1", "Layer 2", "Layer 3"], "answer": "B"},
+    {"question": "What is the Gas Fee?", "options": ["Cost to deploy a smart contract", "Transaction fee on the blockchain", "Fee for account creation", "Fee for mining crypto"], "answer": "B"},
+    {"question": "How can developers deploy dApps on Base?", "options": ["Using Python scripts", "Using Solidity and Ethereum tools", "Through C++ programs", "Via Base's proprietary SDK"], "answer": "B"},
+    {"question": "What are NFTs?", "options": ["Non-Fungible Tokens", "Network Funded Transfers", "Node Frequency Transactions", "Non-Financial Transactions"], "answer": "A"},
+    {"question": "Which platform is NOT compatible with Base?", "options": ["Ethereum", "Polygon", "Bitcoin", "Arbitrum"], "answer": "C"},
+    {"question": "What is Layer 2 scalability?", "options": ["Blockchain updates", "Improving transaction speed and cost", "Creating new tokens", "Centralizing the blockchain"], "answer": "B"},
+    {"question": "What is an example of a Base use case?", "options": ["Building DeFi apps", "Operating drones", "Hosting video games", "Data analysis"], "answer": "A"},
+    {"question": "Base is a product of which Coinbase initiative?", "options": ["Coinbase Cloud", "Coinbase Wallet", "Coinbase Ventures", "Coinbase L2"], "answer": "A"},
+    {"question": "What is the role of Rollups in Base?", "options": ["Increasing mining rewards", "Bundling transactions", "Eliminating gas fees", "Decreasing token prices"], "answer": "B"},
+    {"question": "Which library can help interact with Base smart contracts?", "options": ["Web3.js", "PyTorch", "Pandas", "Numpy"], "answer": "A"},
+    {"question": "What does ERC stand for in Ethereum?", "options": ["Ethereum Request for Comments", "Ethereum Resource Compiler", "Ethereum Runtime Compiler", "Ethereum Rollup Chain"], "answer": "A"},
+    {"question": "What is DeFi?", "options": ["Distributed Finance", "Decentralized Finance", "Definitive Finance", "Data-enabled Finance"], "answer": "B"},
+    {"question": "Which of these is a Base-compatible wallet?", "options": ["Coinbase Wallet", "Apple Wallet", "PayPal Wallet", "Google Pay"], "answer": "A"},
+    {"question": "What is the Base chain's primary focus?", "options": ["High transaction fees", "Enhanced interoperability", "Low-speed transactions", "Centralization"], "answer": "B"},
+    {"question": "What is an advantage of using Layer 2 solutions?", "options": ["Slower transaction times", "Lower costs", "Higher fees", "Decreased security"], "answer": "B"},
+    {"question": "Which of these is a key benefit of Base?", "options": ["High gas fees", "Scalability", "No interoperability", "High latency"], "answer": "B"},
+    {"question": "What is the Base Testnet used for?", "options": ["Deployment experiments", "Real-world transactions", "Data storage", "Token mining"], "answer": "A"},
+    {"question": "What is the primary token used on the Base platform?", "options": ["BTC", "ETH", "SOL", "DOT"], "answer": "B"},
+    {"question": "How do Rollups help Base?", "options": ["Increase scalability", "Eliminate nodes", "Centralize data", "Replace Ethereum"], "answer": "A"},
+    {"question": "What does L2 stand for?", "options": ["Layer Two", "Level Two", "Low Latency Two", "Latency Two"], "answer": "A"},
+    {"question": "What are zk-Rollups?", "options": ["Zero-Knowledge Rollups", "Zone-Key Rollups", "Zero-Keeper Rollups", "Zone Knowledge Rollups"], "answer": "A"},
+    {"question": "What makes Base ecosystem low-cost?", "options": ["Proof of Work", "Rollups", "Higher gas fees", "Increased block time"], "answer": "B"},
+    {"question": "What is a wallet in blockchain?", "options": ["A crypto mining tool", "A storage for crypto assets", "A transaction validator", "A token generator"], "answer": "B"},
+    {"question": "What is Coinbase's role in Base?", "options": ["Developer", "Token Miner", "Wallet Validator", "Protocol Designer"], "answer": "A"},
+    {"question": "What is Ethereum's main advantage?", "options": ["Fast fees", "Smart contract support", "Limited token support", "Low security"], "answer": "B"},
+    {"question": "What is a blockchain?", "options": ["A distributed ledger", "A private database", "A crypto wallet", "A token validator"], "answer": "A"},
+    {"question": "What is staking in Ethereum?", "options": ["Locking tokens to earn rewards", "Mining Bitcoin", "Selling tokens", "Using tokens for transactions"], "answer": "A"},
+    {"question": "What is a decentralized network?", "options": ["A centralized database", "A distributed peer-to-peer system", "A physical server", "A single blockchain"], "answer": "B"},
+    {"question": "What is the purpose of a Base wallet?", "options": ["Storing crypto assets", "Generating tokens", "Validating transactions", "Distributing rewards"], "answer": "A"},
+    {"question": "What is the Ethereum Virtual Machine (EVM)?", "options": ["A decentralized ledger", "A runtime environment for smart contracts", "A wallet management system", "A crypto mining tool"], "answer": "B"},
+    {"question": "What is Gas in Ethereum?", "options": ["A transaction cost", "A crypto token", "A wallet validator", "A reward system"], "answer": "A"},
+    {"question": "How is Base ecosystem governed?", "options": ["Decentralized", "Centralized", "Partially Centralized", "By Smart Contracts"], "answer": "A"}
+]
+
+# Function to start the quiz
+def start_quiz():
+    print("Welcome to Eliora Quizzes!")
+    print("Test your knowledge about the Base ecosystem.")
+    score = 0
+    random.shuffle(questions)  # Shuffle questions
+
+    for i, q in enumerate(questions[:10]):  # Ask 10 random questions
+        print(f"\nQuestion {i + 1}: {q['question']}")
+        for index, option in enumerate(q['options'], start=1):
+            print(f"{chr(64 + index)}. {option}")
+        user_answer = input("Your answer (A/B/C/D): ").strip().upper()
+        if user_answer == q['answer']:
+            print("Correct!")
+            score += 1
+        else:
+            print(f"Wrong! The correct answer was {q['answer']}.")
+
+    print("\nQuiz completed!")
+    print(f"Your score: {score}/10")
+
+# Main function
+if __name__ == "__main__":
+    start_quiz()
